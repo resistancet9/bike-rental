@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bike_type: MyString
+  description: MyString
+  image_url: MyString
+  cost_per_hour: 1
+  day_rate: 1
+  weekend_rate: 1
+  avail: false
+  qty: 1
+  location: MyString
+
+two:
+  bike_type: MyString
+  description: MyString
+  image_url: MyString
+  cost_per_hour: 1
+  day_rate: 1
+  weekend_rate: 1
+  avail: false
+  qty: 1
+  location: MyString

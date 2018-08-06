@@ -1,0 +1,30 @@
+    <header class="home-page">
+      <div class="text-white form-holder p-4 my-4">
+        <h2 class="mb-3 font-weight-normal"> Rent A Bike Now </h2>
+        <form>
+          <div class="form-group">
+            <label for="bike-type">Bike Type</label>
+            <select class="form-control" id="bike-type" onchange="changeQuantity(event)">
+              <% @bikes.each do |bike|%>
+                <option value="<%=bike.id%>"><%= bike.bike_type %></option>
+              <%end%>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" min="1" id="quantity" placeholder="Quantity">
+            <small>Available: <span id="available">0</span></small>
+          </div>
+          <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" class="form-control" id="start-date" onchange="changeEndDate(event)">
+          </div>
+          <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input type="date" class="form-control" id="end-date" placeholder="End Date" onchange="noOfDays()">
+          </div>
+          <small>Number Of Days: <span id="no-of-days">1</span></small><br>
+          <button type="submit" class="btn btn-outline-light mt-2">Book Now</button>
+        </form>
+      </div>
+    </header>
