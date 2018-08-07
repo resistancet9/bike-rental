@@ -1,0 +1,20 @@
+// Place all the styles related to the Bookings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+.card {
+  height: 400px;
+}
+
+.a-hover:hover {
+  text-decoration: none;
+}
+
+tr:hover {
+  cursor: pointer;
+}

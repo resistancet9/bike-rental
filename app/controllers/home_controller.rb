@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
-  before_action :require_login
-  
   def index
-  	@bikes = Bike.all
+    @bikes = Bike.all
+    @booking = Booking.new
   end
 end

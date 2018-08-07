@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180806172042) do
   end
 
   create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer "qty", null: false
     t.bigint "bike_id"
     t.bigint "user_id"
     t.integer "days"

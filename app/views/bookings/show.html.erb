@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row bg-warning rounded p-3 mt-5">
+    <h2>Booking Summary:</h2>
+  </div>
+  <div class="row bg-light p-5 mt-1 rounded">
+    <div class="col">
+      <%=image_tag(@booking.bike.image_url, { :class => "img-fluid", :alt => "Card Image"})%>
+    </div>
+    <div class="col">
+      <a href="<%= bike_path(@booking.bike) %>" class="a-hover">
+        <h2 class="text-muted mb-3">
+          <%= @booking.bike.bike_type %>
+        </h2>
+      </a>
+      <hr>
+      <p>
+        <span>Quantity:</span>
+        <strong>
+          <%= @booking.qty %>
+        </strong>
+      </p>
+      <p>
+        <span>Booked On:</span>
+        <strong>
+          <%= @booking.created_at.to_s[0..10] %>
+        </strong>
+      </p>
+      <p>
+        <span>Start Date:</span>
+        <strong>
+          <%= @booking.startdate %>
+        </strong>
+      </p>
+      <p>
+        <span>End Date:</span>
+        <strong>
+          <%= @booking.enddate %>
+        </strong>
+      </p>
+      <p>
+        <span>No of Days:</span>
+        <strong>
+          <%= @booking.days ? @booking.days : 'nil' %>
+        </strong>
+      </p>
+      <p>
+        <span>No of Hours:</span>
+        <strong>
+          100hrs
+        </strong>
+      </p>
+      <hr>
+      <p>
+        <span class="lead text-muted">Total Cost:</span>
+        <strong>
+          $1211
+        </strong>
+      </p>
+      <hr>
+      <%= link_to "Go back", bookings_path %>
+        <%= link_to "Book More", home_path %>
+    </div>
+  </div>
+</div>

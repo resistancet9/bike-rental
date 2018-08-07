@@ -1,0 +1,51 @@
+<div class="container">
+  <% if !@bookings.empty? %>
+    <h1 class="text-light my-4">All Bookings</h1>
+    <table class="table table-light table-hover">
+      <thead class="bg-warning p-5">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Bike</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Quatity</th>
+          <th scope="col">Number of Days</th>
+          <th scope="col">Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each_with_index do |booking, index| %>
+          <tr onclick="window.location.href='<%= booking_path(booking) %>'">
+            <th scope="row">
+              <%= index + 1 %>
+            </th>
+            <td>
+              <%= booking.bike.bike_type %>
+            </td>
+            <td>
+              <%= booking.startdate %>
+            </td>
+            <td>
+              <%= booking.enddate %>
+            </td>
+            <td>
+              <%= booking.qty %>
+            </td>
+            <td>
+              <%= booking.days %>
+            </td>
+            <td>
+              <%= "$" + booking.days.to_s %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      <div class="text-light">
+        <h2 class="my-4"> Sorry! No bookings available.</h2>
+        <p>Click
+          <%= link_to "Book Now", home_path, {:class => "text-light"} %> to Book</p>
+      </div>
+      <% end %>
+</div>

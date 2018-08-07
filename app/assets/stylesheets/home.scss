@@ -3,18 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home-page {
-  background: url(home/home-page.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 100vh;
-  margin-top: -20px;
 }
 
 .form-holder {
   width: 400px;
-  position: relative;
-  top: 40px;
-  left: 40px;
-  background-color: rgba(#17202a, 0.9);
+  background-color: #0005;
   border-radius: 5px;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(#000, 0.6),
+      rgba(#000, 0.6)
+    ),
+    url(Citybikes_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y: 0, -80px;
+}
+
+.form-control {
+  border-radius: 0 !important;
+  background: #eee !important;
+  color: #eee;
+}
+
+.btn {
+  border-radius: 0 !important;
 }

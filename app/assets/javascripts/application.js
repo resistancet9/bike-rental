@@ -50,6 +50,9 @@ function noOfDays() {
       "days"
     )
   );
+  document.querySelector("#no_of_days").value = document.querySelector(
+    "#no-of-days"
+  ).innerText;
 }
 document.addEventListener("DOMContentLoaded", function(event) {
   changeQuantity(null, 1);
