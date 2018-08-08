@@ -27,12 +27,15 @@ ActiveRecord::Schema.define(version: 20180806172042) do
   end
 
   create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer "qty", null: false
     t.bigint "bike_id"
     t.bigint "user_id"
+    t.string "start_date"
+    t.string "end_date"
+    t.integer "qty"
     t.integer "days"
-    t.string "startdate"
-    t.string "enddate"
+    t.integer "hours"
+    t.integer "weekdays"
+    t.integer "weekenddays"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bike_id"], name: "index_bookings_on_bike_id"

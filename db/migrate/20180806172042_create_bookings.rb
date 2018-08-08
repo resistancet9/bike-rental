@@ -6,7 +6,10 @@ class CreateBookings < ActiveRecord::Migration[5.1]
       t.string :start_date
       t.string :end_date
       t.integer :qty
-      t.string :bike_type
+      t.integer :days
+      t.integer :hours
+      t.integer :weekdays
+      t.integer :weekenddays
       t.timestamps
     end
   end

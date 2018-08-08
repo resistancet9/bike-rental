@@ -1,16 +1,15 @@
 <div class="container">
   <% if !@bookings.empty? %>
     <h1 class="text-light my-4">All Bookings</h1>
-    <table class="table table-light table-hover">
+    <table class="table table-light table-hover text-center">
       <thead class="bg-warning p-5">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Bike</th>
           <th scope="col">Start Date</th>
           <th scope="col">End Date</th>
-          <th scope="col">Quatity</th>
+          <th scope="col">Quantity</th>
           <th scope="col">Number of Days</th>
-          <th scope="col">Cost</th>
         </tr>
       </thead>
       <tbody>
@@ -23,19 +22,16 @@
               <%= booking.bike.bike_type %>
             </td>
             <td>
-              <%= booking.startdate %>
+              <%= booking.start_date %>
             </td>
             <td>
-              <%= booking.enddate %>
+              <%= booking.end_date %>
             </td>
             <td>
               <%= booking.qty %>
             </td>
             <td>
               <%= booking.days %>
-            </td>
-            <td>
-              <%= "$" + booking.days.to_s %>
             </td>
           </tr>
           <% end %>

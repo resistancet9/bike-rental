@@ -13,47 +13,59 @@
         </h2>
       </a>
       <hr>
-      <p>
-        <span>Quantity:</span>
-        <strong>
-          <%= @booking.qty %>
-        </strong>
-      </p>
-      <p>
-        <span>Booked On:</span>
-        <strong>
-          <%= @booking.created_at.to_s[0..10] %>
-        </strong>
-      </p>
-      <p>
-        <span>Start Date:</span>
-        <strong>
-          <%= @booking.startdate %>
-        </strong>
-      </p>
-      <p>
-        <span>End Date:</span>
-        <strong>
-          <%= @booking.enddate %>
-        </strong>
-      </p>
-      <p>
-        <span>No of Days:</span>
-        <strong>
-          <%= @booking.days ? @booking.days : 'nil' %>
-        </strong>
-      </p>
-      <p>
-        <span>No of Hours:</span>
-        <strong>
-          100hrs
-        </strong>
-      </p>
+      <div class="row">
+        <div class="col">
+          <p>
+            <span>Quantity:</span>
+            <strong>
+              <%= @booking.qty %>
+            </strong>
+          </p>
+          <p>
+            <span>Booked On:</span>
+            <strong>
+              <%= @booking.created_at.to_s[0..10] %>
+            </strong>
+          </p>
+          <p>
+            <span>Start Date:</span>
+            <strong>
+              <%= @booking.start_date %>
+            </strong>
+          </p>
+          <p>
+            <span>End Date:</span>
+            <strong>
+              <%= @booking.end_date %>
+            </strong>
+          </p>
+          <p>
+            <span>No. of Weekend Days:</span>
+            <strong>
+              <%= @booking.weekenddays ? @booking.weekenddays : 'nil' %>
+            </strong>
+          </p>
+          <p>
+            <span>Total No. of Days:</span>
+            <strong>
+              <%= @booking.days ? @booking.days : 'nil' %>
+            </strong>
+          </p>
+        </div>
+        <div class="col border-left">
+          <p>
+            <span>No of Hours:</span>
+            <strong>
+              <%= (@booking.hours).to_s + "hrs" %>
+            </strong>
+          </p>
+        </div>
+      </div>
       <hr>
       <p>
         <span class="lead text-muted">Total Cost:</span>
         <strong>
-          $1211
+          <%= "$" + @total_cost.to_s%>
         </strong>
       </p>
       <hr>
