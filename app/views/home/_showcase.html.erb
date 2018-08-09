@@ -1,0 +1,30 @@
+<div class="bg-light p-5">
+  <h1 class="display-3">Various Bikes Available</h1>
+  <hr>
+  <div class="row">
+    <% Bike.all.each do |bike| %>
+      <a href="<%= bike_path(bike)%>" class="col-md-6">
+        <div class="card text-white showcase">
+          <%=image_tag(bike.image_url, { :class => "img-fluid w-100 " + bike.bike_type, :alt => "Card Image"})%>
+            <div class="card-img-overlay">
+              <h2 class="card-title">
+                <%=bike.bike_type%>
+              </h2>
+              <p class="card-text">
+                <%=bike.description%>
+              </p>
+              <p class="card-text">
+                <%= "$" + bike.cost_per_hour.to_s %> per hour /
+                  <%= "$" + bike.day_rate.to_s %> per day /
+                    <%= "$" + bike.weekend_rate.to_s %> per weekend day
+              </p>
+              <p class="card-text">
+                Location:
+                <%= bike.location%>
+              </p>
+            </div>
+        </div>
+      </a>
+      <% end %>
+  </div>
+</div>

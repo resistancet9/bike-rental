@@ -1,49 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Bike type:</strong>
-  <%= @bike.bike_type %>
+<p id="notice">
+  <%= notice %>
 </p>
+<div class="container bg-white p-2">
+  <div class="row p-5">
+    <div class="col">
+      <p>
+        <strong>Bike type:</strong>
+        <%= @bike.bike_type %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @bike.description %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @bike.description %>
+      </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @bike.image_url %>
-</p>
+      <p>
+        <strong>Cost per hour:</strong>
+        <%= @bike.cost_per_hour %>
+      </p>
 
-<p>
-  <strong>Cost per hour:</strong>
-  <%= @bike.cost_per_hour %>
-</p>
+      <p>
+        <strong>Day rate:</strong>
+        <%= @bike.day_rate %>
+      </p>
+    </div>
+    <div class="col">
+      <p>
+        <strong>Weekend rate:</strong>
+        <%= @bike.weekend_rate %>
+      </p>
 
-<p>
-  <strong>Day rate:</strong>
-  <%= @bike.day_rate %>
-</p>
+      <p>
+        <strong>Qty:</strong>
+        <%= @bike.qty %>
+      </p>
 
-<p>
-  <strong>Weekend rate:</strong>
-  <%= @bike.weekend_rate %>
-</p>
+      <p>
+        <strong>Location:</strong>
+        <%= @bike.location %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Avail:</strong>
-  <%= @bike.avail %>
-</p>
+  <%= link_to 'Back', home_path, :class => "text-dark" %>
 
-<p>
-  <strong>Qty:</strong>
-  <%= @bike.qty %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @bike.location %>
-</p>
-
-<%= link_to 'Edit', edit_bike_path(@bike) %> |
-<%= link_to 'Back', bikes_path %>
+</div>

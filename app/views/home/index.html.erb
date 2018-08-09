@@ -1,48 +1,56 @@
 <div class="container">
-  <header class="home-page">
-    <div class="text-white form-holder p-4 my-4">
-      <h2 class="mb-3 font-weight-normal"> Rent A Bike Now </h2>
-      <%= form_for(@booking) do |f| %>
-        <div class="form-group">
-          <label for="bike-type">Bike Type</label>
-          <%= f.select(:bike_id , @bikes.all.collect {|p| [ p.bike_type, p.id ]}, {},
-                :class => "form-control bikes-select",
-                :onchange => "changeQuantity(event)") %>
-        </div>
-        <div class="form-group">
-          <label for="quantity">Quantity</label>
-          <%= f.number_field :qty, { :class => "form-control",:id => "quantity", :min => 1} %>
-            <small>Available:
-              <span id="available">0</span>
+  <div class="row">
+    <div class="col">
+      <header class="home-page">
+        <div class="text-white form-holder p-4 my-4">
+          <h2 class="mb-3 font-weight-normal"> Rent A Bike Now </h2>
+          <%= form_for(@booking) do |f| %>
+            <div class="form-group">
+              <label for="bike-type">Bike Type</label>
+              <%= f.select(:bike_id , @bikes.all.collect {|p| [ p.bike_type, p.id ]}, {},
+                    :class => "form-control bikes-select",
+                    :onchange => "changeQuantity(event)") %>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <%= f.number_field :qty, { :class => "form-control",:id => "quantity", :min => 1} %>
+                <small>Available:
+                  <span id="available">0</span>
+                </small>
+            </div>
+            <div class="form-group">
+              <label for="start-date">Start Date</label>
+              <%= f.datetime_local_field :start_date, { :class => "form-control",:id => "start-date", :min => 1, :onchange => "changeEndDate(event)" } %>
+            </div>
+            <div class="form-group">
+              <label for="end-date">End Date</label>
+              <%= f.datetime_local_field :end_date, { :class => "form-control",:id => "end-date", :min => 1, :onchange => "noOfDays()" } %>
+            </div>
+            <small>Number Of Days:
+              <span id="no-of-days">1</span>
             </small>
+            <br>
+            <%= f.hidden_field :user_id, value: current_user ? current_user.id: 'nill' %>
+              <%= f.hidden_field :days, {:value => 1, :id => "no_of_days"} %>
+                <%= f.hidden_field :weekdays, {:value => 0, :id => "weekdays"} %>
+                  <%= f.hidden_field :weekenddays, {:value => 0, :id => "weekenddays"} %>
+                    <%= f.hidden_field :hours, {:value => 0, :id => "no_of_hours"} %>
+                      <%= f.submit :submit, :class => "btn btn-outline-light mt-2" %>
+                        <% end %>
         </div>
-        <div class="form-group">
-          <label for="start-date">Start Date</label>
-          <%= f.datetime_local_field :start_date, { :class => "form-control",:id => "start-date", :min => 1, :onchange => "changeEndDate(event)" } %>
-        </div>
-        <div class="form-group">
-          <label for="end-date">End Date</label>
-          <%= f.datetime_local_field :end_date, { :class => "form-control",:id => "end-date", :min => 1, :onchange => "noOfDays()" } %>
-        </div>
-        <small>Number Of Days:
-          <span id="no-of-days">1</span>
-        </small>
-        <br>
-        <%= f.hidden_field :user_id, value: current_user ? current_user.id: 'nill' %>
-          <%= f.hidden_field :days, {:value => 1, :id => "no_of_days"} %>
-            <%= f.hidden_field :weekdays, {:value => 0, :id => "weekdays"} %>
-              <%= f.hidden_field :weekenddays, {:value => 0, :id => "weekenddays"} %>
-                <%= f.hidden_field :hours, {:value => 0, :id => "no_of_hours"} %>
-                  <%= f.submit :submit, :class => "btn btn-outline-light mt-2" %>
-                    <% end %>
+      </header>
     </div>
-  </header>
+    <div class="col">
+      <%= render partial: 'carousel' %>
+    </div>
+  </div>
 </div>
+<%= render partial: 'showcase' %>
 
-<script>
-  changeQuantity(null, document.querySelector(".bikes-select option:nth-child(1)").value);
-  changeStartDate();
-  changeEndDate();
-  checkNoOfDays();
-  checkNoofHours();
-</script>
+  <script>
+    changeQuantity(null, document.querySelector(".bikes-select option:nth-child(1)").value);
+    changeStartDate();
+    changeEndDate();
+    checkNoOfDays();
+    checkNoofHours();
+  </script>

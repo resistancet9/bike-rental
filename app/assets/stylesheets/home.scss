@@ -29,9 +29,61 @@ body {
 .form-control {
   border-radius: 0 !important;
   background: #eee !important;
-  color: #eee;
 }
 
 .btn {
   border-radius: 0 !important;
+}
+
+.carousel {
+  top: 20%;
+  max-height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.397) !important;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-caption p {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 200 !important;
+}
+
+.showcase {
+  max-height: 300px;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.showcase img {
+  height: 100% !important;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.showcase .card-img-overlay {
+  background: #0005;
+}
+
+.showcase .card-text {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  font-weight: 200 !important;
+}
+
+.showcase:hover {
+  cursor: pointer;
+
+  & img {
+    transform: scale(1.009);
+  }
 }
