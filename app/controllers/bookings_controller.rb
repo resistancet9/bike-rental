@@ -56,6 +56,9 @@ class BookingsController < ApplicationController
 
     # calculate weekday and weekend price
     @total_days_cost = (@weekdays * @day_rate) + (@weekends * @weekend_rate)
+
+
+    puts "+++++ " + @total_days_cost.to_s + " " + @total_hours_cost.to_s
     
     # total number of hours bike is rented for times per hour cost.
     @total_cost = @total_days_cost + @total_hours_cost
