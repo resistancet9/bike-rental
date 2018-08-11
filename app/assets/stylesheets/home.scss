@@ -19,7 +19,7 @@ body {
       rgba(#000, 0.6),
       rgba(#000, 0.6)
     ),
-    url(Citybikes_background.jpg);
+    asset-data-url("Citybikes_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
