@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20180806172042) do
 
-  create_table "bikes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "bikes", force: :cascade do |t|
     t.string "bike_type"
     t.string "description"
     t.string "image_url"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180806172042) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "bookings", force: :cascade do |t|
     t.bigint "bike_id"
     t.bigint "user_id"
     t.string "start_date"
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180806172042) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", null: false
