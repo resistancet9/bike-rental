@@ -2,8 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: 1234
+  username: user
   host: localhost
   database: rent_a_bike
 
@@ -11,13 +10,14 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: 1234
+  username: user
   host: localhost
   database: rent_a_bike
 
 production:
-  <<: *default
-  database: rent-a-bike
-  username: postgres
-  password: 1234
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: user
+  host: localhost
+  database: rent_a_bike
